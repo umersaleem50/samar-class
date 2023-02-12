@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Task from "./Components/stateful/Task/Task";
+import { useState } from "react";
 
 function App() {
+  const [isToggle, setToggle] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!isToggle && <Task heading="samar" />}
+      <button onClick={() => setToggle(true)}>click me</button>
     </div>
   );
 }
